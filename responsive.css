@@ -1,0 +1,33 @@
+@media (max-width: 990px) {
+  .Data {
+    display: flex;
+    flex-direction: column;
+  }
+  #title,
+  #catagory,
+  #count,
+  #ads,
+  #price,
+  #discount,
+  .Create {
+    width: 95%;
+  }
+  input:hover {
+    transform: translate(0px, 0px) scale(1, 1);
+  }
+  .SearchByTitle,
+.SearchByCatagory{
+    width: 47%;   
+}
+.section2{
+    align-items: center;
+    width: 90%;
+}
+.DataCollector{
+  height: auto;
+}
+.Logo3:hover,
+.Logo2:hover{
+  color: rgb(19, 124, 173);
+}
+}
