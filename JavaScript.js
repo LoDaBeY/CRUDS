@@ -12,10 +12,13 @@ var catagory = document.querySelector("#catagory");
 var SearchByTitle = document.querySelector("#SearchByTitle");
 var SearchByCatagory = document.querySelector("#SearchByCatagory");
 var Create = document.querySelector(".Create");
+var DeleteAllBtn = document.querySelector(".DeleteAll");
+var Update = document.querySelector('.Update');
+var Delete = document.querySelector('.Delete');
 let mood = "Create";
 let temp;
 var DataProduct;
-var DeleteAllBtn = document.querySelector(".DeleteAll");
+
 
 DarkModeBtn.addEventListener("click", function () {
   body.classList.toggle("dark-mode");
@@ -34,7 +37,7 @@ function GetTotalAcc() {
     total.style.background = "green";
   } else {
     total.innerHTML = "";
-    total.style.background = "white";
+    total.style.background = "";
   }
 }
 
@@ -63,7 +66,6 @@ Create.addEventListener("click", function () {
   } else {
     DataProduct.push(NewProduct);
   }
-  DataProduct.push(NewProduct);
   localStorage.setItem("product", JSON.stringify(DataProduct));
   DeleteAllDataAfterTakingThem();
   GetTotalAcc();
@@ -119,3 +121,7 @@ DeleteAllBtn.addEventListener("click", function () {
   localStorage.clear();
   ShowData();
 });
+
+Delete.addEventListener('click', function (i) {
+console.log(i)
+})

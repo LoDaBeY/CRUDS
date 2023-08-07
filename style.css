@@ -100,6 +100,7 @@ input:hover {
 }
 .search {
   margin: 15px;
+  display: flex;
 }
 .Create {
   width: 100%;
@@ -109,14 +110,11 @@ input:hover {
   padding: 4px;
 }
 .Create:hover,
-.SearchByTitle:hover,
-.SearchByCatagory:hover,
 .Delete:hover,
 .Update:hover {
   background-color: rgb(78, 183, 231);
 }
-.SearchByTitle,
-.SearchByCatagory,
+
 .Delete,
 .Update{
   width: 90px;
@@ -125,10 +123,15 @@ input:hover {
   margin: 3px;
   padding: 4px;
 }
-
+.btn-outline-primary{
+margin: 0 20px;
+width: 50%;
+}
 .btn-danger{
-margin-left: 70px ;
-width: 50%;}
+margin-left: 25%;
+width: 50%;
+
+}
 
 span {
   width: 50%;
@@ -164,8 +167,4 @@ td {
 
 .total::before{
   content: 'Total : ';
-}
-.SearchByTitle,
-.SearchByCatagory{
-  font-size: 13px;
 }
