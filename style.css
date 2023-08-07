@@ -118,13 +118,18 @@ input:hover {
 .SearchByTitle,
 .SearchByCatagory,
 .Delete,
-.Update {
+.Update{
   width: 90px;
   border-radius: 50px;
   border: 1px rgb(84, 169, 209) solid;
   margin: 3px;
   padding: 4px;
 }
+
+.btn-danger{
+margin-left: 70px ;
+width: 50%;}
+
 span {
   width: 50%;
   border-radius: 30px;
@@ -159,4 +164,8 @@ td {
 
 .total::before{
   content: 'Total : ';
+}
+.SearchByTitle,
+.SearchByCatagory{
+  font-size: 13px;
 }

@@ -15,6 +15,7 @@ var Create = document.querySelector(".Create");
 let mood = "Create";
 let temp;
 var DataProduct;
+var DeleteAllBtn = document.querySelector(".DeleteAll");
 
 DarkModeBtn.addEventListener("click", function () {
   body.classList.toggle("dark-mode");
@@ -44,7 +45,7 @@ if (localStorage.product != null) {
   DataProduct = [];
 }
 
-//Create the Submit btn and save it in the LocalStorage and ShowData
+//Create the new product and look how many count there're then save it in the LocalStorage and ShowData
 Create.addEventListener("click", function () {
   var NewProduct = {
     title: title.value,
@@ -55,10 +56,17 @@ Create.addEventListener("click", function () {
     count: count.value,
     catagory: catagory.value,
   };
+  if (count.value > 1) {
+    for (let i = 0; i < count.value; i++) {
+      DataProduct.push(NewProduct);
+    }
+  } else {
+    DataProduct.push(NewProduct);
+  }
   DataProduct.push(NewProduct);
   localStorage.setItem("product", JSON.stringify(DataProduct));
   DeleteAllDataAfterTakingThem();
-  GetTotalAcc()
+  GetTotalAcc();
   ShowData();
 });
 
@@ -93,5 +101,21 @@ function ShowData() {
     `;
   }
   document.getElementById("tbody").innerHTML = table;
+
+  //Creat btn to delete all the data in table and in Localstorage too
+  if (DataProduct.length > 0) {
+    DeleteAllBtn.innerHTML = `<button type="button" class="btn btn-danger" >Delete All (${DataProduct.length}) </button>`;
+    DeleteAllBtn.style.display = "block";
+  } else {
+    DeleteAllBtn.innerHTML = "";
+    DeleteAllBtn.style.display = "none";
+  }
 }
 ShowData();
+
+//function to delete all the data by one click if there're
+DeleteAllBtn.addEventListener("click", function () {
+  DataProduct.splice(0);
+  localStorage.clear();
+  ShowData();
+});
