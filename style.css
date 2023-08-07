@@ -13,6 +13,14 @@
   width: 100%;
   height: 100vh;
 }
+#CRUDSLogo {
+  color: white;
+  transition: all 1.3s;
+}
+
+#CRUDSLogo:hover {
+  color: rgb(135, 206, 235);
+}
 .Brand {
   font-weight: bolder;
   animation: flip 1s both;
@@ -147,4 +155,8 @@ td {
     display: flex;
     flex-direction: column;
   }
+}
+
+.total::before{
+  content: 'Total : ';
 }
